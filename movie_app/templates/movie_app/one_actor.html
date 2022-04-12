@@ -1,0 +1,13 @@
+{%block content%}
+    <h2>Актёр</h2>
+    <h4>Имя {{actor.first_name}}</h4>
+    <h4>Фамилия {{actor.last_name}}</h4>
+    <h4>Пол {{actor.gender}}</h4>
+    <hr>
+    <h3>Список фильмов</h3>
+    <ul>
+        {%for movie in actor.movies.all %}
+            <li><a href="{{ movie.get_url }}">{{ movie.name }}</a></li>
+        {%endfor%}
+    </ul>
+{%endblock content%}
